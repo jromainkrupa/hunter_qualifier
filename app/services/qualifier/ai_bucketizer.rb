@@ -93,12 +93,12 @@ module Qualifier::AiBucketizer
       - Company description and business model
       - Signup source/referrer (if provided, consider if it indicates legitimate interest)
 
-      IMPORTANT: If a user location is provided, verify that it matches the company's geographic location. Location mismatches may indicate suspicious signups.
+      IMPORTANT: If a user location is provided, verify that it matches the company's or user's geographic location. Location mismatches may indicate suspicious signups but if for bigger companies it's ok in that case just check if the country is not in high poverty countries.
 
       Bucket definitions:
       - enterprise: Large companies (typically 1000+ employees) with significant sales/outreach needs
-      - high_potential: Mid-sized companies (typically 50-1000 employees) with growth potential and sales needs
-      - not_likely_to_buy: Small companies, non-profits, or companies unlikely to need email finding/verification services
+      - high_potential: SMB (Small to Mid-sized) companies with growth potential and sales needs
+      - not_likely_to_buy: non-profits, or companies unlikely to need email finding/verification services
 
       Respond ONLY with valid JSON in this exact format:
       {
