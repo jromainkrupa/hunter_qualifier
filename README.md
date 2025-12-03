@@ -28,7 +28,23 @@ ruby -v
 bundle install
 ```
 
-4. Start the Rails server:
+4. Configure the API token (choose one method):
+
+   **Option A: Environment Variable (Recommended for local development)**
+   ```bash
+   export API_TOKEN="your-api-token-here"
+   ```
+
+   **Option B: Rails Credentials (For production)**
+   ```bash
+   # Edit credentials (requires master key)
+   EDITOR="code --wait" rails credentials:edit
+   # Add: test: api_token: your-api-token-here
+   ```
+
+   > **Note:** Rails credentials are encrypted and require a master key (`config/master.key`) to decrypt. This file is not committed to the repository for security reasons. If you don't have the master key, use the environment variable method instead.
+
+5. Start the Rails server:
 ```bash
 rails server
 ```
