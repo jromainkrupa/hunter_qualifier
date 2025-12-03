@@ -1,24 +1,87 @@
-# README
+# Hunter Qualifier
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+API service for qualifying users based on email and additional metadata.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+### Prerequisites
 
-* System dependencies
+- Ruby 3.4.4
+- Bundler
 
-* Configuration
+### Installation
 
-* Database creation
+1. Clone the repository:
+```bash
+git clone git@github.com:jromainkrupa/hunter_qualifier.git
+cd hunter_qualifier
+```
 
-* Database initialization
+2. Check Ruby version:
+```bash
+ruby -v
+# Should output: ruby 3.4.4
+```
 
-* How to run the test suite
+3. Install dependencies:
+```bash
+bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+4. Start the Rails server:
+```bash
+rails server
+```
 
-* Deployment instructions
+The API will be available at `http://localhost:3000`
 
-* ...
+## API Usage
+
+### Authentication
+
+All API requests require a Bearer token. You should receive your API token via email.
+
+### Endpoint
+
+**POST** `/api/v1/qualifications`
+
+### Example Request
+
+```bash
+curl -X POST "http://localhost:3000/api/v1/qualifications" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "qualification": {
+      "email": "sales@hunter.io"
+    }
+  }'
+```
+
+### Request Parameters
+
+The `qualification` object accepts the following optional parameters:
+- `email` (required)
+- `first_name`
+- `last_name`
+- `password`
+- `signup_source`
+- `location`
+- `ip_address`
+
+### Example with Additional Parameters
+
+```bash
+curl -X POST "http://localhost:3000/api/v1/qualifications" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "qualification": {
+      "email": "bastien@hunter.io",
+      "location": "nigeria",
+      "signup_source": "appsumo"
+    }
+  }'
+```
+
+Replace `YOUR_API_TOKEN` with the API token you received via email.
