@@ -1,8 +1,7 @@
 ---
-description: Follow Rails 8.0 model standards and patterns when creating or modifying models
 globs: ["app/models/**/*.rb"]
+alwaysApply: false
 ---
-
 # Rails Model Standards
 
 ## Context

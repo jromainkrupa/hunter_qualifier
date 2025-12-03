@@ -1,8 +1,7 @@
 ---
-description: Follow Rails 8.0 controller standards and patterns when creating or editing controllers
 globs: ["app/controllers/**/*.rb"]
+alwaysApply: false
 ---
-
 # Rails Controller Standards
 
 ## Context
