@@ -134,6 +134,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.18.10-x86_64-linux-musl)
       racc (~> 1.4)
+    openai (0.36.1)
+      connection_pool
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
@@ -225,6 +227,7 @@ PLATFORMS
 
 DEPENDENCIES
   debug
+  openai (~> 0.36.1)
   puma (>= 5.0)
   rails (~> 8.0.2, >= 8.0.2.1)
   sqlite3 (>= 2.1)
