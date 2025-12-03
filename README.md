@@ -62,7 +62,7 @@ curl -X POST "http://localhost:3000/api/v1/qualifications" \
   -H "Authorization: Bearer YOUR_API_TOKEN" \
   -d '{
     "qualification": {
-      "email": "sales@hunter.io"
+      "email": "marc.benioff@salesforce.com"
     }
   }'
 ```
@@ -94,3 +94,9 @@ curl -X POST "http://localhost:3000/api/v1/qualifications" \
 ```
 
 Replace `YOUR_API_TOKEN` with the API token you received via email.
+
+
+## Improvements
+- Do the work in the background
+- If generic email like sales, support. Could we bucket them in a different bucket?
+- The location is a bit misleading as is the prompt as to be improved.
